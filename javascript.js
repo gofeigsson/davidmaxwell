@@ -1,41 +1,36 @@
 //PARALLAX EFFECT DIV 1
-const parallax = document.getElementById("one");
+const parallax = document.getElementById("home");
 window.addEventListener("scroll", function() 
 {
-let offset = window.pageYOffset; 
-parallax.style.backgroundPositionY = offset * 0.6 + "px";
+  let offset = window.pageYOffset; 
+  parallax.style.backgroundPositionY = offset * 0.6 + "px";
 });
 
-$(document).ready(function(){
-    $("button").click(function(){
-      $("p").hide();
-    });
-  });
 //GALLERY FOR POLAROID PAINTINGS
-
-
-    // Get the modal
-    var modal = document.getElementById('myModal');
-    
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
+//GET MODAL
+var modal = document.getElementById('myModal');
+//GET IMAGE AND PLACE IN MODAL
     var img = $('.myImg');
     var modalImg = $("#img01");
-    var captionText = document.getElementById("caption");
     $('.myImg').click(function(){
         modal.style.display = "block";
         var newSrc = this.src;
         modalImg.attr('src', newSrc);
-        captionText.innerHTML = this.alt;
     });
-    
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    
-    // When the user clicks on <span> (x), close the modal
+// GET SPAN ELEMENT TO CLOSE MODAL
+var span = document.getElementsByClassName("close")[0];
+// CLICK SPAN AND CLOSE MODAL
     span.onclick = function() {
       modal.style.display = "none";
-    }
-   
+    };
+//CLICK OUTSIDE MODAL AND CLOSE
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+};
+
+//ICONS CONTACT   
     feather.replace();
 
 
